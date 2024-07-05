@@ -16,7 +16,7 @@ export type User = {
     getFullNameAndAge: () => string,
 }
 
-const tempObj:User = {
+export const obj:User = {
     name: "John",
     age: 30,
     skills: ["HTML", "CSS", "JavaScript"],
@@ -42,4 +42,4 @@ const tempObj:User = {
     },
 }
 
-console.log(tempObj.getFullNameAndAge())
+// console.log(obj.getFullNameAndAge())
