@@ -28,7 +28,7 @@ const demoObj = {
     }
 }
 
-!function test(item: any[]): any {
+const testedArr = (item: any[] = []): any => {
     item.push(2)
     item.push('SSD')
     item.push(item)
@@ -39,6 +39,38 @@ const demoObj = {
     item.push(modifiedObj.getSkills())
     item.push(modifiedObj.getFullName.call(demoObj.getFullName()))
     item.push([...new Set([2, 4, 9, 1, 8, 3, 5, 2, 6, 8, 4, 6, 2, 3, 6, 4, 8])].sort((a, b) => a - b))
-    
-    console.log(item)
-}([])
+
+    return item
+}
+console.log(testedArr())
+
+let arr: (
+    number 
+    | boolean 
+    | string 
+    | {name: string} 
+    | {nickName: string} 
+    | (number 
+        | boolean 
+        | string 
+        | number[] 
+        | {key: string}
+    )[]
+)[] = [
+    false, true, 
+    11, 4, 2, 
+    '5', 'Soumya',
+    [
+        2, 
+        [10], 
+        false, 
+        '2', 
+        {key: 'value'}
+    ], 
+    {name: 'SSD'},
+    {nickName: 'Somu'}
+];
+
+console.log(arr)
+
+

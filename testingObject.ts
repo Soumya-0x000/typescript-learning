@@ -42,4 +42,4 @@ export const obj:User = {
     },
 }
 
-// console.log(obj.getFullNameAndAge())
+console.log(obj.getFullNameAndAge())
