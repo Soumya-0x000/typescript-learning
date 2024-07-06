@@ -42,7 +42,7 @@ const testedArr = (item: any[] = []): any => {
 
     return item
 }
-console.log(testedArr())
+// console.log(testedArr())
 
 let arr: (
     number 
@@ -71,6 +71,26 @@ let arr: (
     {nickName: 'Somu'}
 ];
 
-console.log(arr)
+// console.log(arr)
 
+const numArr: number[][] = [[6,2], [3,5,7,2], [1,4], [5,2.7,4.9,2.2], [8,7,5.9], [9,6.9]]
 
+const value1 = numArr
+.reduceRight(
+    (acc, val) => acc.concat(val), []
+).flatMap(
+    (val: number) => (val % 2 === 0) ? [val ** 2] : []
+).reduce(
+    (acc, val) => acc + val, 0
+)
+// console.log(value1)
+
+const value2 = numArr
+.reduce(
+    (acc, val) => acc.concat(val), []
+).map(
+    num => parseFloat(num.toPrecision(2))
+).reduce(
+    (acc, val) => acc + val, 0
+)
+// console.log(value2) 
