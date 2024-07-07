@@ -1,6 +1,6 @@
 enum Size { small = 10, medium, large }
 let mySize: Size = Size.large
-console.log(mySize)
+// console.log(mySize)
 
 enum Color {
     Navy,
@@ -19,7 +19,7 @@ enum Color {
     Teal = 'teal',
     Fuchsia = 'fuchsia',
 }
-console.log(Color.Navy)
+// console.log(Color.Navy)
 
 let myColor: Color = Color.Green
 
@@ -31,4 +31,15 @@ const colorObj: {[key: string]: any} = {}
 colorObj.seaGreen = 'Sea Green'
 colorObj.five = 5
 colorObj.isTrue = true
-console.log(colorObj)
+// console.log(colorObj)
+
+
+let level = {
+    Easy : 'easy',
+    Medium : 'medium',
+    Hard : 'hard',
+    Harder : 'harder',
+    Impossible : 'impossible',
+}
+
+// let myLevel: level = level.Hard

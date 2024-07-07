@@ -56,6 +56,9 @@ let arr: (
         | number[] 
         | {key: string}
     )[]
+    | null
+    | undefined
+    | never
 )[] = [
     false, true, 
     11, 4, 2, 
@@ -68,7 +71,8 @@ let arr: (
         {key: 'value'}
     ], 
     {name: 'SSD'},
-    {nickName: 'Somu'}
+    {nickName: 'Somu'},
+    null, undefined, NaN
 ];
 
 // console.log(arr)
@@ -94,3 +98,16 @@ const value2 = numArr
     (acc, val) => acc + val, 0
 )
 // console.log(value2) 
+
+let testArr: ([number, boolean] | string)[] = ['4', [54, !'2'], 'ssd', [743, !743]]
+testArr.forEach(item => {
+    if (Array.isArray(item)) {
+        item.forEach(subItem => {
+            if (typeof subItem === 'number') {
+                console.log('number:', subItem)
+            } else {
+                console.log(subItem)
+            }
+        })
+    }
+})

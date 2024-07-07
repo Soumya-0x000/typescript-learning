@@ -1,7 +1,8 @@
-export type Address = {
-    street: string,
-    city: string,
-    state: string,
+export interface Address {
+    street: string;
+    city: string;
+    state: string;
+    [key: string]: any;
 }
 
 export type User = {
@@ -43,3 +44,24 @@ export const obj:User = {
 }
 
 console.log(obj.getFullNameAndAge())
+
+
+const basicLevel = {
+    Easy : 'easy',
+    Medium : 'medium',
+    Hard : 'hard',
+} as { [key: string]: string }
+basicLevel.Harder = 'harder'
+
+interface AdditionalLevel {[key: string]: string}
+
+const additionalLevel: AdditionalLevel = {
+    Impossible: 'impossible',
+    nextToImpossible: 'Next to impossible'
+} as const
+
+const level: { [key: string]: any } = {...basicLevel, ...additionalLevel, nine: 9}
+let myLevel: string = level.nine
+
+console.log(myLevel)
+console.log(typeof myLevel)
