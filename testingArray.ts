@@ -44,7 +44,7 @@ const testedArr = (item: any[] = []): any => {
 }
 // console.log(testedArr())
 
-let arr: (
+type arrType = (
     number 
     | boolean 
     | string 
@@ -59,7 +59,9 @@ let arr: (
     | null
     | undefined
     | never
-)[] = [
+)[]
+    
+let arr: arrType = [
     false, true, 
     11, 4, 2, 
     '5', 'Soumya',

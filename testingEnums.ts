@@ -41,5 +41,7 @@ let level = {
     Harder : 'harder',
     Impossible : 'impossible',
 }
+type Level = keyof typeof level
 
-// let myLevel: level = level.Hard
+let myLevel: Level = level.Hard as Level 
+console.log(myLevel)
